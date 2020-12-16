@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Netflix";
-    src: url("/fonts/CONSOLA.TTF");
+    src: url("./fonts/CONSOLA.TTF");
 }
 
 *, *::after, *::before {
