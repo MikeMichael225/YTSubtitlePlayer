@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <div class="input">
+        <h2>Paste the share link to a YT video</h2>
+        <div>
+            <input type="text">
+            <button class="submit">Listen!</button>
+        </div>
+    </div>
+    <div class='controls'>
+        <button class='play'>Play</button> <br>
+        <button class='stop'>Stop</button> <br>
+        <button onclick="window.location.reload();">End</button>
+    </div>
+    <audio class="hide" id="youtube" autoplay></audio>
+</body>
+
+<script>
+    const aud = document.querySelector('audio');
+
+    document.querySelector('.play').addEventListener('click', function () {
+        aud.play();
+    });
+
+    document.querySelector('.stop').addEventListener('click', function () {
+        aud.pause();
+    });
+</script>
+
+</html>
