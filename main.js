@@ -1,4 +1,5 @@
 const cors = "https://cors-anywhere.herokuapp.com/";
+//const cors = "http://localhost:8080/";
 
 var youtubeAudio = document.getElementById('youtube');
 var videoID = "";
@@ -26,9 +27,16 @@ function start() {
                 // update the <audio> element src
                 youtubeAudio.src = audioURL;
 
+            }).catch(() => { window.location.reload(); }).then(() => {
+                setTimeout(() => {
+                    console.log(youtubeAudio.duration)
+                    if (isNaN(youtubeAudio.duration)) {
+                        window.location.reload();
+                    }
+                }, 1000)
             });
-        }
-    });
+        } else { window.location.reload(); }
+    })
 
     function parse_str(str) {
         return str.split('&').reduce(function (params, param) {
