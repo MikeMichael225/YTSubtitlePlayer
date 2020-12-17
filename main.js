@@ -59,8 +59,11 @@ function start() {
         fetch(request).then(res => res.text()).then(text => {
             var con = document.createElement('div');
             con.innerHTML = text;
-
-            var subs = con.querySelector('transcript').querySelectorAll('text');
+	
+			try {
+				var subs = con.querySelector('transcript').querySelectorAll('text');
+			} catch {window.location.reload();}
+            
 
             subs.forEach(sub => {
                 sub.innerText = sub.innerText.replace(/(&quot\;)/g, "\"").replace(/&#39;/g, "'");
